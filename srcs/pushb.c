@@ -6,7 +6,7 @@
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 19:53:15 by bloisel           #+#    #+#             */
-/*   Updated: 2023/01/20 20:04:09 by bloisel          ###   ########.fr       */
+/*   Updated: 2023/01/22 18:27:33 by bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 void	ft_pushb(t_data *dta)
 {
-	int	l;
+	int	i;
 
-	l = 0;
-	while (dta->taba[0][l])
+	i = 0;
+	dta->tabb[i] = dta->taba[i];
+	while (dta->taba[i])
 	{
-		dta->taba[0][l] = dta->tabb[0][l];
-		l++;
+		dta->taba[i] = dta->taba[i + 1];
+		i++;
 	}
-	dta->taba[0][l] = '\0';
+	ft_putendl_fd("pb", 1);
 }

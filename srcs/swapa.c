@@ -6,7 +6,7 @@
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 14:10:06 by bloisel           #+#    #+#             */
-/*   Updated: 2023/01/20 19:12:02 by bloisel          ###   ########.fr       */
+/*   Updated: 2023/01/22 15:25:09 by bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	ft_swapa2(t_data *dta)
 		}
 		dta->taba[1][j] = '\0';
 	}
+	ft_putendl_fd("sa",1);	
 }
 
 void	ft_swapa(t_data *dta)

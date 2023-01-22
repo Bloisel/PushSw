@@ -6,13 +6,13 @@
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:43:20 by bloisel           #+#    #+#             */
-/*   Updated: 2023/01/20 20:07:38 by bloisel          ###   ########.fr       */
+/*   Updated: 2023/01/22 18:32:42 by bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void init_data(t_data *dta)
+void	init_data(t_data *dta)
 {
 	dta->error = 0;
 }
@@ -30,28 +30,24 @@ void	argument(t_data *dta, char **argv, int argc)
 	{
 		j++;
 	}
-	printf("%d",j);
 	dta->tabb = malloc(sizeof(char *) * j);
 	ft_swapa(dta);
-	// ft_pushb(dta);
-	// while (dta->tabb[i])
-	// {
-	// 	ft_printf("%s\n", dta->tabb[i]);
-	// 	i++;
-	// }
-	
-	i = 0;
-	ft_printf(" apres swap  \n");
-	while (dta->taba[i])
-	{
-		ft_printf("%s\n", dta->taba[i]);
-		i++;
-	}
+	ft_printf("%s\n",dta->taba[i]);
+	ft_pushb(dta);
+	ft_printf("premier push :%s\n",dta->tabb[i]);
+	ft_pushb(dta);
+	ft_printf("second push :%s\n",dta->tabb[i]);
+	ft_pushb(dta);
+	ft_swapb(dta);
+	ft_printf("swap :%s\n",dta->tabb[i]);
+	ft_swapab(dta);
+	ft_printf("swap a et b :%s\n",dta->tabb[i]);
 }
+
 int	main(int argc, char **argv)
 {
 	t_data	dta;
-	int	i;
+	int		i;
 
 	i = 0;
 	init_data(&dta);

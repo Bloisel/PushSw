@@ -6,7 +6,7 @@
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:43:15 by bloisel           #+#    #+#             */
-/*   Updated: 2023/01/20 19:54:22 by bloisel          ###   ########.fr       */
+/*   Updated: 2023/01/22 18:27:41 by bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ typedef struct s_data
 	char	**tmpb;
 	int		error;
 }	t_data;
-
 
 void	ft_pushb(t_data *dta);
 void	ft_swapa(t_data *dta);
