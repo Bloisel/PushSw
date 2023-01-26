@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushb.c                                            :+:      :+:    :+:   */
+/*   rotateab.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 19:53:15 by bloisel           #+#    #+#             */
-/*   Updated: 2023/01/24 11:16:59 by bloisel          ###   ########.fr       */
+/*   Created: 2023/01/24 12:55:41 by bloisel           #+#    #+#             */
+/*   Updated: 2023/01/24 13:03:24 by bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_pushb(t_data *dta)
+void	ft_rotateab(t_data *dta)
 {
-	int	i;
+	int		i;
+	int		j;
+	char	*tmp;
+	char	*tmp2;
 
 	i = 0;
-	if (!dta->taba[0] || !dta->taba[1])
-		return ;
+	j = 0;
+	tmp = dta->tabb[0];
+	tmp2 = dta->taba[0];
 	while (dta->tabb[i])
-		i++;
-	if (i > 0)
-		while (--i >= 0)
-			dta->tabb[i + 1] = dta->tabb[i];
-	i = 0;
-	dta->tabb[i] = dta->taba[i];
-	while (dta->taba[i])
 	{
-		dta->taba[i] = dta->taba[i + 1];
+		dta->tabb[i] = dta->tabb[i + 1];
 		i++;
 	}
-	ft_putendl_fd("pb", 1);
+	while (dta->taba[j])
+	{
+		dta->taba[j] = dta->taba[j + 1];
+		j++;
+	}
+	dta->tabb[i - 1]  = tmp;
+	dta->taba[j - 1] = tmp2;
+	ft_putendl_fd("rr", 1);
 }

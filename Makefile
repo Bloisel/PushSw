@@ -6,7 +6,7 @@
 #    By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/17 13:01:59 by bloisel           #+#    #+#              #
-#    Updated: 2023/01/20 20:00:56 by bloisel          ###   ########.fr        #
+#    Updated: 2023/01/26 18:13:11 by bloisel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,22 @@ PTFNAME = libftprintf.a
 CFLAGS =-Wall -Werror -Wextra
 
 SRCS = srcs/main.c \
-		srcs/swapa.c \
-		srcs/swapb.c \
-		srcs/swapab.c \
-		srcs/pushb.c \
-		srcs/ft_exit.c 
+	srcs/second_sort.c \
+	srcs/first_sort.c \
+	srcs/ft_atoi_long.c \
+	srcs/check_error.c \
+	srcs/reverseab.c \
+	srcs/reverseb.c \
+	srcs/reversea.c \
+	srcs/rotateab.c \
+	srcs/rotatea.c \
+	srcs/rotateb.c \
+	srcs/swapa.c \
+	srcs/swapb.c \
+	srcs/swapab.c \
+	srcs/pushb.c \
+	srcs/pusha.c \
+	srcs/ft_exit.c 
 		
 
 OBJS	= $(SRCS:.c=.o)

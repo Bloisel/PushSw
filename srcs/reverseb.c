@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushb.c                                            :+:      :+:    :+:   */
+/*   reverseb.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 19:53:15 by bloisel           #+#    #+#             */
-/*   Updated: 2023/01/24 11:16:59 by bloisel          ###   ########.fr       */
+/*   Created: 2023/01/24 14:02:34 by bloisel           #+#    #+#             */
+/*   Updated: 2023/01/24 17:23:13 by bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_pushb(t_data *dta)
+void	ft_reverseb(t_data *dta)
 {
-	int	i;
+	int		i;
+	char	*tmp;
 
 	i = 0;
-	if (!dta->taba[0] || !dta->taba[1])
-		return ;
 	while (dta->tabb[i])
 		i++;
-	if (i > 0)
-		while (--i >= 0)
-			dta->tabb[i + 1] = dta->tabb[i];
+	tmp = dta->tabb[i - 1];
+	while (--i >= 0)
+		dta->tabb[i + 1] = dta->tabb[i];
+	dta->tabb[0] = tmp;
 	i = 0;
-	dta->tabb[i] = dta->taba[i];
-	while (dta->taba[i])
-	{
-		dta->taba[i] = dta->taba[i + 1];
+	while (dta->tabb[i])
 		i++;
-	}
-	ft_putendl_fd("pb", 1);
+	dta->tabb[i - 1] = NULL;
+	ft_putendl_fd("rrb", 1);
 }

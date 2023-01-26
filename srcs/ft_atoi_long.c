@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushb.c                                            :+:      :+:    :+:   */
+/*   ft_atoi_long.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 19:53:15 by bloisel           #+#    #+#             */
-/*   Updated: 2023/01/24 11:16:59 by bloisel          ###   ########.fr       */
+/*   Created: 2023/01/24 18:38:08 by bloisel           #+#    #+#             */
+/*   Updated: 2023/01/24 18:39:18 by bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "../include/push_swap.h"
 
-void	ft_pushb(t_data *dta)
+long long	ft_atoi_long(const char	*str)
 {
-	int	i;
+	long long	i;
+	long long	neg;
+	long long	result;
 
 	i = 0;
-	if (!dta->taba[0] || !dta->taba[1])
-		return ;
-	while (dta->tabb[i])
+	neg = 1;
+	result = 0;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
-	if (i > 0)
-		while (--i >= 0)
-			dta->tabb[i + 1] = dta->tabb[i];
-	i = 0;
-	dta->tabb[i] = dta->taba[i];
-	while (dta->taba[i])
+	if (str[i] == '-')
 	{
-		dta->taba[i] = dta->taba[i + 1];
+		neg = -1;
 		i++;
 	}
-	ft_putendl_fd("pb", 1);
+	else if (str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = (result * 10) + (str[i] - 48);
+		i++;
+	}
+	return (result * neg);
 }
