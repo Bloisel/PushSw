@@ -6,7 +6,7 @@
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 14:52:47 by bloisel           #+#    #+#             */
-/*   Updated: 2023/01/26 18:08:35 by bloisel          ###   ########.fr       */
+/*   Updated: 2023/01/29 18:43:11 by bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,24 @@ void	ft_first_sort(t_data *dta)
 		tmp = 3000000000;
 		while (dta->taba[i])
 		{
-			if (ft_strnstr(dta->tmp[i], "XxxxxX", 15) == NULL && tmp > ft_atoi_long(dta->tmp[i]))
+			if (ft_strncmp(dta->tmp[i], "XxxxxX", 6) != 0)
 			{
-				tmp = ft_atoi_long(dta->tmp[i]);
-				j = i;
+				if (tmp > ft_atoi_long(dta->tmp[i]))
+				{
+					tmp = ft_atoi_long(dta->tmp[i]);
+					j = i;
+				}
 			}
 			i++;
 		}
 		if (j >= 0)
 		{
 			free(dta->tmp[j]);
-			free(dta->taba[j]);
 			dta->tmp[j] = ft_strdup("XxxxxX");
+			free(dta->taba[j]);
 			dta->taba[j] = ft_itoa(k);
 			k++;
 		}
 	}
+	dta->la = i;
 }

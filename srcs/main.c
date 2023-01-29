@@ -6,7 +6,7 @@
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:43:20 by bloisel           #+#    #+#             */
-/*   Updated: 2023/01/26 18:42:17 by bloisel          ###   ########.fr       */
+/*   Updated: 2023/01/29 18:44:18 by bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	argument2(t_data *dta, char **argv, int argc)
 	i = -1;
 	while (argv[++i])
 		;
+	// fix malloc tmp 
 	dta->taba = malloc(sizeof(char *) * i);
 	i = -1;
 	while (argv[++i + 1])
@@ -45,6 +46,18 @@ void	argument2(t_data *dta, char **argv, int argc)
 	while (dta->taba[j])
 		j++;
 	dta->tabb = ft_calloc(j + 1, sizeof(char *));
+}
+
+void free_tab(char **tab)
+{
+	int i;
+
+	i = -1;
+	while (tab[++i])
+		if (tab[i] != NULL)
+			free(tab[i]);
+	if (tab != NULL)
+		free(tab);
 }
 
 int	main(int argc, char **argv)
@@ -61,32 +74,25 @@ int	main(int argc, char **argv)
 	}
 	if (argc > 2)
 		argument2(&dta, argv, argc);	
+	
 	ft_check_error(&dta);
 	i = -1;
-	// ft_pushb(&dta);
-	// ft_pushb(&dta);
-	// ft_pushb(&dta);
-	// ft_reverseab(&dta);
 	ft_printf("---------\n");
-	while (++i < 6) // taille 6 = ma chaine a modifier en fonction 
+	while (++i < 6) 
 		ft_printf("%s	|	%s\n", dta.taba[i], dta.tabb[i]);
 	ft_printf("-----------------------------------\n");
-	// ft_swapa(&dta);
-	// ft_swapab(&dta);
-	// ft_rotatea(&dta);
-	// ft_reverseab(&dta);
-	// int num = 87;
-	// int num1 = 781;
-	// printf("%d\n", num1>>2);
-	// printf("%d\n", num>>2);
-	// printf("mon num en bi %d\n", 78&1);
-	// printf("mon num en bi %d\n", 8&7);
+	
 	ft_first_sort(&dta);
-	ft_second_sort(&dta, ft_atoi_long(dta.taba[i]), "01");
+	boucle_binary(&dta);
+	
 	i = -1;
 	ft_printf("-----------------------------------\n");
 	while (++i < 6)
 		ft_printf("%s	|	%s\n", dta.taba[i], dta.tabb[i]);
 	ft_printf("---------\n");
+	free_tab(dta.tmp);
+	free_tab(dta.taba);
+	free(dta.tabb);
+	system("leaks push_swap");	
 	return (0);
 }

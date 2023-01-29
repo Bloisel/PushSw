@@ -6,7 +6,7 @@
 #    By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/17 13:01:59 by bloisel           #+#    #+#              #
-#    Updated: 2023/01/26 18:13:11 by bloisel          ###   ########.fr        #
+#    Updated: 2023/01/29 17:57:03 by bloisel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,10 @@ NAME = push_swap
 LIBFTNAME = libft.a
 PTFNAME = libftprintf.a
 
-CFLAGS =-Wall -Werror -Wextra
+CFLAGS =-Wall -Werror -Wextra -g
 
 SRCS = srcs/main.c \
+	srcs/boucle_binary.c \
 	srcs/second_sort.c \
 	srcs/first_sort.c \
 	srcs/ft_atoi_long.c \
