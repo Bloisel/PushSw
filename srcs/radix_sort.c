@@ -1,30 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotatea.c                                          :+:      :+:    :+:   */
+/*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/24 11:40:54 by bloisel           #+#    #+#             */
-/*   Updated: 2023/01/30 16:26:05 by bloisel          ###   ########.fr       */
+/*   Created: 2023/01/30 11:39:46 by bloisel           #+#    #+#             */
+/*   Updated: 2023/01/30 14:06:45y bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_rotatea(t_data *dta)
+void	ft_radix_sort(t_data *dta)
 {
-	int		i;
-	char	*tmp;
+	int	j;
+	int	k;
 
-	tmp = NULL;
-	i = 0;
-	tmp = dta->taba[i];
-	while (dta->taba[i])
+	j = 0;
+	while (dta->taba[0][j])
+		j++;
+	j--;
+	while (j >= 0)
 	{
-		dta->taba[i] = dta->taba[i + 1];
-		i++;
-	}
-	dta->taba[i - 1]  = tmp;
-	ft_putendl_fd("ra", 1);
+		k = -1;
+		while (dta->taba[++k])
+			;
+		while (k > 0)
+		{
+			if (dta->taba[0][j] == '0')
+				ft_pushb(dta);
+			else
+				ft_rotatea(dta);
+			k--;
+		}
+		while (dta->tabb[0] != NULL)
+		{
+			ft_pusha(dta);
+		}
+		j--;
+	}	
 }

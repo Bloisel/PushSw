@@ -6,7 +6,7 @@
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 17:42:00 by bloisel           #+#    #+#             */
-/*   Updated: 2023/01/25 13:32:01 by bloisel          ###   ########.fr       */
+/*   Updated: 2023/01/30 19:49:21 by bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,9 @@ void	ft_check_error(t_data *dta)
 		j = 0;
 		while (dta->taba[i][j])
 		{
-			if (dta->taba[i][j] == '-'
-				&& (dta->taba[i][j + 1] > '9' || dta->taba[i][j + 1] < '0'))
-				printf_error (dta, "Error argument autre qu'un chiffre\n");
-			else if ((dta->taba[i][j] > '9' || dta->taba[i][j] < '0')
-						&& (dta->taba[i][j] != '-'))
+			if (dta->taba[i][j] == '-' && dta->taba[i][j + 1] != '-')
+				j++;
+			if (dta->taba[i][j] < '0' || dta->taba[i][j] > '9')
 				printf_error (dta, "Error argument autre qu'un chiffre\n");
 			j++;
 		}

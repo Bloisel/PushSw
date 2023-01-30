@@ -6,7 +6,7 @@
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:43:15 by bloisel           #+#    #+#             */
-/*   Updated: 2023/01/29 18:45:06 by bloisel          ###   ########.fr       */
+/*   Updated: 2023/01/30 18:54:24 by bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ typedef struct s_data
 	int		maxlenbin;
 }	t_data;
 
+
+void		ft_count_argc(char **argv, int argc,t_data *dta);
+void		ft_radix_sort(t_data *dta);
 void		boucle_binary(t_data *dta);
 char		*ft_second_sort(long long nbr);
 void		ft_first_sort(t_data *dta);

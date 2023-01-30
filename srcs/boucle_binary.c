@@ -6,18 +6,17 @@
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 16:42:24 by bloisel           #+#    #+#             */
-/*   Updated: 2023/01/29 18:42:51 by bloisel          ###   ########.fr       */
+/*   Updated: 2023/01/30 11:42:28 by bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-
 void	good_len_binary(t_data *dta)
 {
-	int i;
+	int		i;
 	char	*tmp;
-	
+
 	tmp = NULL;
 	i = 0;
 	while (dta->taba[i])
@@ -25,13 +24,12 @@ void	good_len_binary(t_data *dta)
 		while (ft_strlen(dta->taba[i]) < dta->maxlenbin)
 		{
 		tmp = ft_strjoin("0", dta->taba[i]);
-		free(dta->taba[i]);
+			free(dta->taba[i]);
 		dta->taba[i] = tmp;
 		}
 		i++;
 	}
 }
-
 
 void	len_binary(t_data *dta)
 {
@@ -50,8 +48,8 @@ void	len_binary(t_data *dta)
 
 void	boucle_binary(t_data *dta)
 {
-	int	i;
-	char *tmp;
+	int		i;
+	char	*tmp;
 
 	i = 0;
 	while (dta->taba[i])

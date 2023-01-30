@@ -6,7 +6,7 @@
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 19:53:15 by bloisel           #+#    #+#             */
-/*   Updated: 2023/01/24 11:16:59 by bloisel          ###   ########.fr       */
+/*   Updated: 2023/01/30 17:56:26 by bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,16 @@ void	ft_pushb(t_data *dta)
 	int	i;
 
 	i = 0;
-	if (!dta->taba[0] || !dta->taba[1])
-		return ;
-	while (dta->tabb[i])
-		i++;
-	if (i > 0)
+	if (dta->taba[0])
+	{
+		while (dta->tabb[i])
+			i++;
 		while (--i >= 0)
 			dta->tabb[i + 1] = dta->tabb[i];
-	i = 0;
-	dta->tabb[i] = dta->taba[i];
-	while (dta->taba[i])
-	{
-		dta->taba[i] = dta->taba[i + 1];
-		i++;
+		dta->tabb[0] = dta->taba[0];
+		i = -1;
+		while (dta->taba[++i])
+			dta->taba[i] = dta->taba[i + 1];
+		ft_putendl_fd("pb", 1);
 	}
-	ft_putendl_fd("pb", 1);
 }
