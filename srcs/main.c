@@ -6,7 +6,7 @@
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:43:20 by bloisel           #+#    #+#             */
-/*   Updated: 2023/01/30 20:07:25 by bloisel          ###   ########.fr       */
+/*   Updated: 2023/02/08 13:31:29 by bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	init_data(t_data *dta)
 	dta->error = 0;
 }
 
-void	argument(t_data *dta, char **argv, int argc)
+void	argument(t_data *dta, char **argv, int *argc)
 {
 	int	j;
 
@@ -26,6 +26,7 @@ void	argument(t_data *dta, char **argv, int argc)
 	dta->tmp = ft_split(argv[1], ' ');
 	while (dta->taba[j])
 		j++;
+	dta->argc = j + 1;
 	dta->tabb = ft_calloc(j + 1, sizeof(char *));
 }
 
@@ -50,6 +51,7 @@ void	argument2(t_data *dta, char **argv, int argc)
 		j++;
 	dta->taba[i] = NULL;
 	dta->tmp[i] = NULL;
+	dta->argc = argc;
 	dta->tabb = ft_calloc(j + 1, sizeof(char *));
 }
 
@@ -73,17 +75,31 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		ft_exit(&dta);	
 	if (argc == 2)
-		argument(&dta, argv, argc);
+		argument(&dta, argv, &argc);
 	if (argc > 2)
 		argument2(&dta, argv, argc);
-	ft_count_argc(argv, argc, &dta);
 	ft_check_error(&dta);
 	ft_first_sort(&dta);
-	boucle_binary(&dta);
-	ft_radix_sort(&dta);
-	free_tab(dta.tmp);
-	free_tab(dta.taba);
-	free(dta.tabb);
+	for (int i = 0; i < 3; i++){
+		printf("%s		| %s\n", dta.taba[i], dta.tabb[i]);
+	}
+	ft_count_argc(argv, dta.argc, &dta);
+	for (int i = 0; i < 3; i++){
+		printf("%s		| %s\n", dta.taba[i], dta.tabb[i]);
+	}
+	// ft_pushb(&dta);
+	// ft_pushb(&dta);
+	// ft_reversea(&dta);
+	// ft_pusha(&dta);
+	// for (int i = 0; i < 4; i++){
+	// 	printf("%s		| %s\n", dta.taba[i], dta.tabb[i]);
+	// }
+	// ft_count_argc(argv, argc, &dta);
+	// boucle_binary(&dta);
+	// ft_radix_sort(&dta);
+	// free_tab(dta.tmp);
+	// free_tab(dta.taba);
+	// free(dta.tabb);
 	// system("leaks push_swap");
 	return (0);
 }

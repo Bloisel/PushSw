@@ -6,7 +6,7 @@
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:43:15 by bloisel           #+#    #+#             */
-/*   Updated: 2023/01/30 18:54:24 by bloisel          ###   ########.fr       */
+/*   Updated: 2023/02/08 11:53:38 by bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_data
 	int		la;
 	int		error;
 	int		maxlenbin;
+	int		argc;
 }	t_data;
 
 
@@ -51,5 +52,6 @@ void		ft_swapab(t_data *dta);
 void		ft_swapb(t_data *dta);
 void		ft_exit(t_data *dta);
 void		printf_error(t_data *dta, char *str);
+void		for_3_second(t_data *dta);
 
 #endif

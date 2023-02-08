@@ -6,47 +6,108 @@
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:39:58 by bloisel           #+#    #+#             */
-/*   Updated: 2023/01/30 20:49:26 by bloisel          ###   ########.fr       */
+/*   Updated: 2023/02/08 13:32:46 by bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	for_3(t_data *dta)
+int	for_3(t_data *dta);
+
+void	for_5(t_data *dta)
 {
-	int i;
-	int j;
+	int	i;
 
 	i = 0;
-	j = -1;
-	while (dta->taba[++j])
+	while (i < 2)
 	{
-	ft_pushb(dta);
-	if (ft_atoi_long(dta->taba[i]) < ft_atoi_long(dta->taba[i + 1]))
-		ft_pusha(dta);
-	else
-		ft_swapa(dta);
-	ft_pusha(dta);
-	if (ft_atoi_long(dta->taba[i]) < ft_atoi_long(dta->taba[i + 1]))
-	{
-		while (dta->taba[j])
+		if (ft_atoi(dta->taba[0]) == 3 || ft_atoi(dta->taba[0]) == 4)
 		{
-		printf("%s\n",dta->taba[j]);
-		j++;
+			ft_pushb(dta);
+			i++;
 		}
-		ft_exit(dta);
+		ft_rotatea(dta);
+	}
+	for_3(dta);
+	ft_pusha(dta);
+	ft_pusha(dta);
+	if (ft_atoi(dta->taba[0]) == 4)
+	{
+		ft_swapa(dta);
+		ft_rotatea(dta);
+		ft_rotatea(dta);
 	}
 	else
-	ft_rotatea(dta);
-	while (dta->taba[j])
 	{
-		printf("%s\n",dta->taba[j]);
-		j++;
-	}
-	ft_exit(dta);
+		ft_rotatea(dta);
+		ft_rotatea(dta);
 	}
 }
 
+void	for_4(t_data *dta)
+{
+	int	i;
+
+	i = 0;
+	while (i < 1)
+	{
+		if (ft_atoi(dta->taba[0]) == 3)
+		{
+			ft_pushb(dta);
+			i++;
+		}
+		ft_rotatea(dta);
+	}
+	for_3(dta);
+	ft_pusha(dta);
+	ft_rotatea(dta);
+}
+
+void	for_3_second(t_data *dta)
+{
+	int	j;
+
+	j = 0;
+	if (((ft_atoi(dta->taba[j]) == 0) 
+			&& ft_atoi(dta->taba[j + 1]) == 2)
+		&& ft_atoi(dta->taba[j + 2]) == 1)
+	{
+		ft_reversea(dta);
+		ft_swapa(dta);
+	}
+	if (((ft_atoi(dta->taba[j]) == 1) 
+			&& ft_atoi(dta->taba[j + 1]) == 2)
+		&& ft_atoi(dta->taba[j + 2]) == 0)
+		ft_reversea(dta);
+	if (((ft_atoi(dta->taba[j]) == 2) 
+			&& ft_atoi(dta->taba[j + 1]) == 0)
+		&& ft_atoi(dta->taba[j + 2]) == 1)
+		ft_rotatea(dta);
+}
+
+int	for_3(t_data *dta)
+{
+	int	j;
+
+	j = 0;
+	if (((ft_atoi(dta->taba[j]) == 0) 
+			&& ft_atoi(dta->taba[j + 1]) == 1)
+		&& ft_atoi(dta->taba[j + 2]) == 2)
+		return (0);
+	if (((ft_atoi(dta->taba[j]) == 1) 
+			&& ft_atoi(dta->taba[j + 1]) == 0)
+		&& ft_atoi(dta->taba[j + 2]) == 2)
+		ft_swapa(dta);
+	if (((ft_atoi(dta->taba[j]) == 2) 
+			&& ft_atoi(dta->taba[j + 1]) == 1)
+		&& ft_atoi(dta->taba[j + 2]) == 0)
+	{
+		ft_rotatea(dta);
+		ft_swapa(dta);
+	}
+	for_3_second(dta);
+	return (0);
+}
 
 void	for_2(t_data *dta)
 {
@@ -66,18 +127,21 @@ void	ft_count_argc(char **argv, int argc, t_data *dta)
 {
 	if (argc == 2)
 		ft_exit(dta);
-	if (argc == 3)
+	else if (argc == 3)
 		for_2(dta);
-	if (argc == 4)
-	{
+	else if (argc == 4)
 		for_3(dta);	
-	}
-	if (argc == 5)
+	else if (argc == 5)
 	{
-		printf("ok 5 donc 4");
+		for_4(dta);
 	}
-	if (argc == 6)
+	else if (argc == 6)
 	{
-		printf("ok 6 donc 5");
+		for_5(dta);
+	}
+	else
+	{
+		boucle_binary(dta);
+		ft_radix_sort(dta);
 	}
 }
