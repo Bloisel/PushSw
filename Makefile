@@ -6,7 +6,7 @@
 #    By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/17 13:01:59 by bloisel           #+#    #+#              #
-#    Updated: 2023/01/30 18:46:59 by bloisel          ###   ########.fr        #
+#    Updated: 2023/02/08 13:57:23 by bloisel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ PTFNAME = libftprintf.a
 CFLAGS =-Wall -Werror -Wextra -g
 
 SRCS = srcs/main.c \
+	srcs/count_argc2.c \
 	srcs/count_argc.c \
 	srcs/radix_sort.c \
 	srcs/boucle_binary.c \

@@ -6,7 +6,7 @@
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:43:15 by bloisel           #+#    #+#             */
-/*   Updated: 2023/02/08 11:53:38 by bloisel          ###   ########.fr       */
+/*   Updated: 2023/02/08 13:55:50 by bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ typedef struct s_data
 	int		argc;
 }	t_data;
 
-
 void		ft_count_argc(char **argv, int argc,t_data *dta);
 void		ft_radix_sort(t_data *dta);
 void		boucle_binary(t_data *dta);
@@ -53,5 +52,7 @@ void		ft_swapb(t_data *dta);
 void		ft_exit(t_data *dta);
 void		printf_error(t_data *dta, char *str);
 void		for_3_second(t_data *dta);
+int			for_3(t_data *dta);
+void		for_5(t_data *dta);
 
 #endif

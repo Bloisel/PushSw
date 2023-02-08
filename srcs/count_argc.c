@@ -6,43 +6,11 @@
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:39:58 by bloisel           #+#    #+#             */
-/*   Updated: 2023/02/08 13:32:46 by bloisel          ###   ########.fr       */
+/*   Updated: 2023/02/08 13:57:01 by bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-int	for_3(t_data *dta);
-
-void	for_5(t_data *dta)
-{
-	int	i;
-
-	i = 0;
-	while (i < 2)
-	{
-		if (ft_atoi(dta->taba[0]) == 3 || ft_atoi(dta->taba[0]) == 4)
-		{
-			ft_pushb(dta);
-			i++;
-		}
-		ft_rotatea(dta);
-	}
-	for_3(dta);
-	ft_pusha(dta);
-	ft_pusha(dta);
-	if (ft_atoi(dta->taba[0]) == 4)
-	{
-		ft_swapa(dta);
-		ft_rotatea(dta);
-		ft_rotatea(dta);
-	}
-	else
-	{
-		ft_rotatea(dta);
-		ft_rotatea(dta);
-	}
-}
 
 void	for_4(t_data *dta)
 {
@@ -130,7 +98,7 @@ void	ft_count_argc(char **argv, int argc, t_data *dta)
 	else if (argc == 3)
 		for_2(dta);
 	else if (argc == 4)
-		for_3(dta);	
+		for_3(dta);
 	else if (argc == 5)
 	{
 		for_4(dta);
