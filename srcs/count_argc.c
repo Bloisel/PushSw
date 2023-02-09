@@ -6,7 +6,7 @@
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:39:58 by bloisel           #+#    #+#             */
-/*   Updated: 2023/02/08 13:57:01 by bloisel          ###   ########.fr       */
+/*   Updated: 2023/02/09 10:47:48 by bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,18 @@ void	for_3_second(t_data *dta)
 	int	j;
 
 	j = 0;
-	if (((ft_atoi(dta->taba[j]) == 0) 
+	if (((ft_atoi(dta->taba[j]) == 0)
 			&& ft_atoi(dta->taba[j + 1]) == 2)
 		&& ft_atoi(dta->taba[j + 2]) == 1)
 	{
 		ft_reversea(dta);
 		ft_swapa(dta);
 	}
-	if (((ft_atoi(dta->taba[j]) == 1) 
+	if (((ft_atoi(dta->taba[j]) == 1)
 			&& ft_atoi(dta->taba[j + 1]) == 2)
 		&& ft_atoi(dta->taba[j + 2]) == 0)
 		ft_reversea(dta);
-	if (((ft_atoi(dta->taba[j]) == 2) 
+	if (((ft_atoi(dta->taba[j]) == 2)
 			&& ft_atoi(dta->taba[j + 1]) == 0)
 		&& ft_atoi(dta->taba[j + 2]) == 1)
 		ft_rotatea(dta);
@@ -58,15 +58,15 @@ int	for_3(t_data *dta)
 	int	j;
 
 	j = 0;
-	if (((ft_atoi(dta->taba[j]) == 0) 
+	if (((ft_atoi(dta->taba[j]) == 0)
 			&& ft_atoi(dta->taba[j + 1]) == 1)
 		&& ft_atoi(dta->taba[j + 2]) == 2)
 		return (0);
-	if (((ft_atoi(dta->taba[j]) == 1) 
+	if (((ft_atoi(dta->taba[j]) == 1)
 			&& ft_atoi(dta->taba[j + 1]) == 0)
 		&& ft_atoi(dta->taba[j + 2]) == 2)
 		ft_swapa(dta);
-	if (((ft_atoi(dta->taba[j]) == 2) 
+	if (((ft_atoi(dta->taba[j]) == 2)
 			&& ft_atoi(dta->taba[j + 1]) == 1)
 		&& ft_atoi(dta->taba[j + 2]) == 0)
 	{

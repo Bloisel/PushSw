@@ -6,7 +6,7 @@
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 12:55:41 by bloisel           #+#    #+#             */
-/*   Updated: 2023/01/24 13:03:24 by bloisel          ###   ########.fr       */
+/*   Updated: 2023/02/09 10:44:11 by bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_rotateab(t_data *dta)
 		dta->taba[j] = dta->taba[j + 1];
 		j++;
 	}
-	dta->tabb[i - 1]  = tmp;
+	dta->tabb[i - 1] = tmp;
 	dta->taba[j - 1] = tmp2;
 	ft_putendl_fd("rr", 1);
 }

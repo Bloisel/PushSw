@@ -6,7 +6,7 @@
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:43:20 by bloisel           #+#    #+#             */
-/*   Updated: 2023/02/08 13:31:29 by bloisel          ###   ########.fr       */
+/*   Updated: 2023/02/09 17:23:55 by bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,33 +73,14 @@ int	main(int argc, char **argv)
 
 	init_data(&dta);
 	if (argc == 1)
-		ft_exit(&dta);	
+		ft_exit(&dta);
 	if (argc == 2)
 		argument(&dta, argv, &argc);
 	if (argc > 2)
 		argument2(&dta, argv, argc);
 	ft_check_error(&dta);
-	ft_first_sort(&dta);
-	for (int i = 0; i < 3; i++){
-		printf("%s		| %s\n", dta.taba[i], dta.tabb[i]);
-	}
-	ft_count_argc(argv, dta.argc, &dta);
-	for (int i = 0; i < 3; i++){
-		printf("%s		| %s\n", dta.taba[i], dta.tabb[i]);
-	}
-	// ft_pushb(&dta);
-	// ft_pushb(&dta);
-	// ft_reversea(&dta);
-	// ft_pusha(&dta);
-	// for (int i = 0; i < 4; i++){
-	// 	printf("%s		| %s\n", dta.taba[i], dta.tabb[i]);
-	// }
-	// ft_count_argc(argv, argc, &dta);
-	// boucle_binary(&dta);
-	// ft_radix_sort(&dta);
-	// free_tab(dta.tmp);
-	// free_tab(dta.taba);
-	// free(dta.tabb);
-	// system("leaks push_swap");
+	ft_first_sort(&dta, 0, 0, 0);
+	ft_loop_order(&dta);
+	ft_count_argc(argv, argc, &dta);
 	return (0);
 }
